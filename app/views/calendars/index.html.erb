@@ -7,7 +7,7 @@
         <li><%= link_to 'Sign-In', new_user_session_path, class: "signin" %></li>
       <% end %>
         <li><%= link_to "Calendar", calendars_path, class: "current" %> </li>
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "My Groups", root_path %></li>
         </ul>
       </nav>
     </header>
@@ -16,8 +16,9 @@
 <% start_date = params.fetch(:start_date, Date.today).to_date %>
 <% date_range = (start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week).to_a %>
 
-<h1 class="center month"><%= start_date.strftime("%B") %></h1>
+<h1 class="center month"><%= start_date.strftime("%B") %> <%= start_date.strftime("%Y") %></h1>
 
+<%= @response.body %>
 
 
 <table class="calendar">
@@ -34,7 +35,7 @@
     <% date_range.each_slice(7) do |week| %>
         <tr class="days">
         <% week.each do |day|%>
-        <td> <%= day %></td>
+        <td> <%= day.strftime("%d") %></td>
         <% end %>
         </tr>
     <% end %>

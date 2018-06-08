@@ -158,7 +158,7 @@ z-index: -3;
     position: absolute;
     width: 500px;
     height: 500px;
-    top: 125px;
+    top: 230px;
     left: 2700px;
     animation: move_left 34000ms infinite linear;
     z-index: -3;
@@ -174,50 +174,54 @@ z-index: -3;
     z-index: -3;
 }
 
-.wind img{
-    width: 200px;
-    height: 100px;
-}
-
-.wind2 img {
-    width: 200px;
-    height: 100px;
-}
-
-.wind3 img {
-    width: 200px;
-    height: 100px;
-}
 
 .wind {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    top: 155px;
-    left: 1900px;
-    animation: move_left 35000ms infinite linear;
+    width: 150px;
+    height: 150px;
+    top: 220px;
+    left: 1951px;
+    animation: move_left 34300ms infinite linear;
     z-index: -3;
-
+    opacity: 0.05;
 }
 
 .wind2 {
     position: absolute;
-    width: 250px;
-    height: 250px;
-    top: 230px;
-    left: 3150px;
-    animation: move_left 35000ms infinite linear;
+    width: 150px;
+    height: 150px;
+    top: 300px;
+    left: 3086px;
+    animation: move_left 34300ms infinite linear;
     z-index: -3;
+        opacity: 0.05;
 }
 
 .wind3 {
     position: absolute;
-    width: 450px;
-    height: 450px;
-    top: 375px;
-    left: 2250px;
-    animation: move_left 35000ms infinite linear;
+    width: 150px;
+    height: 150px;
+    top: 480px;
+    left: 2468px;
+    animation: move_left 34300ms infinite linear;
     z-index: -3;
+    opacity: 0.05;
+}
+
+
+.wind img {
+    width: 150px;
+    height: 75px;
+}
+
+.wind2 img {
+    width: 150px;
+    height: 75px;
+}
+
+.wind3 img {
+    width: 150px;
+    height: 75px;
 }
 
 
@@ -228,7 +232,7 @@ z-index: -3;
     width: 5500px;
     height: 5500px;
     left: -2050px;
-    top: -4820px;
+    top: -4750px;
     border-radius: 45%;
     animation: rotate 18000ms infinite linear;
     border: solid white 1.5px;
