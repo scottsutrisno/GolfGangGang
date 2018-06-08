@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GolfGang</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag 'favicon.jpg' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+
+<% unless notice.nil? %>
+   <p class="notice"><%= notice %></p>
+<% end %>
+<% unless alert.nil? %>
+   <p class="alert"><%= alert %></p>
+<% end %>
+
+    <%= yield %>
+  </body>
+</html>

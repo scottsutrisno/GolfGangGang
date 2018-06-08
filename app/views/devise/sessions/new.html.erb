@@ -1,0 +1,66 @@
+
+
+
+  <div class="bg">
+
+  <div class="cloud"><img src="https://www.clker.com/cliparts/5/H/J/b/u/X/whitecloud-big-md.png" alt=""></div>
+  <div class="cloud2"><img src="https://www.clker.com/cliparts/5/H/J/b/u/X/whitecloud-big-md.png" alt=""></div>
+  <div class="cloud3"><img src="https://www.clker.com/cliparts/5/H/J/b/u/X/whitecloud-big-md.png" alt=""></div>
+
+
+
+  <div class="wind"><img src="http://cdn.onlinewebfonts.com/svg/img_281584.png" alt=""></div>
+ <div class="wind2"><img src="http://cdn.onlinewebfonts.com/svg/img_281584.png" alt=""></div>
+  <div class="wind3"><img src="http://cdn.onlinewebfonts.com/svg/img_281584.png" alt=""></div>
+
+  <div class='wave -one'></div>
+  <div class='wave -two'></div>
+  <div class='wave -three'></div>
+  <div class='hole'><div class="flag"><img src="https://kingkarnk288.files.wordpress.com/2014/06/in10.gif?w=240" alt=""></div></div>
+
+
+    <header>
+      <nav class="nav">
+        <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign-Off", destroy_user_session_path, :method => :delete %></li>
+        <% else %>
+        <li><%= link_to 'Sign-In', new_user_session_path, class: "current" %></li>
+      <% end %>
+        <li><%= link_to "Calendar", calendars_path %> </li>
+        </ul>
+      </nav>
+    </header>
+
+
+<div class= "devforms">
+<h2>Log in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+<br>
+    <div class="render">
+    <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

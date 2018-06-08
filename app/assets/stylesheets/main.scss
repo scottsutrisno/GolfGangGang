@@ -1,0 +1,298 @@
+body {
+    font-family: 'Roboto',
+    sans-serif;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+
+
+.nav {
+    margin-right: 50px;
+    font-style: italic;
+    width: 100vw;
+    border: solid white 1px;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #333;
+    box-sizing: border-box;
+}
+
+.nav li {
+    float: right;
+    overflow: hidden;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 50px;
+    text-decoration: none;
+}
+
+.current {
+    border-bottom: double greenyellow 6px;
+}
+
+.nav li a:hover {
+    background-color: black;
+}
+
+.center {
+text-align: center;
+}
+
+
+.calendar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar tr,
+.calendar tbody {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+}
+
+.calendar .weekdays {
+    background: #2a493a;
+    width: 180vh;
+    height: 50px;
+}
+
+
+.calendar .weekdays th {
+    border: solid black 1px;
+    border-bottom: solid black 3px;
+    border-top: solid black 3px;
+
+}
+
+
+
+.calendar .weekdays th {
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 20px;
+	padding: 15px 6px 0px 0px;
+	color: #fff;
+	font-size: 13px;
+}
+
+.calendar td {
+    min-height: 125px;
+    border: solid black 1px;
+}
+
+.calendar td:hover {
+	background: #d3d3d3;
+}
+
+.calendar tr:nth-child(even) {
+    background-color: #f0ffea;
+}
+
+.month{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 40px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+.devforms {
+    margin: 0 auto;
+    // margin-left: 55px;
+    margin-top: 55px;
+    box-shadow: 1px 2px 22px black;
+    width: 300px;
+    height: 200px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #333;
+    border: solid white 1px;
+    color: white;
+    padding: 40px 0px;
+    border-radius: 5%;
+}
+
+
+
+
+.render a {
+color: white;
+}
+
+.bg {
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    background-color: blue;
+    background-size: cover;
+    display: block;
+    text-align: center;
+    z-index: -5;
+}
+
+
+.cloud {
+position: absolute;
+width: 600px;
+height: 600px;
+top: 150px;
+left: 1500px;
+animation: move_left 34000ms infinite linear;
+z-index: -3;
+}
+
+.cloud2 {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 125px;
+    left: 2700px;
+    animation: move_left 34000ms infinite linear;
+    z-index: -3;
+}
+
+.cloud3 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 400px;
+    left: 2100px;
+    animation: move_left 34000ms infinite linear;
+    z-index: -3;
+}
+
+.wind img{
+    width: 200px;
+    height: 100px;
+}
+
+.wind2 img {
+    width: 200px;
+    height: 100px;
+}
+
+.wind3 img {
+    width: 200px;
+    height: 100px;
+}
+
+.wind {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 155px;
+    left: 1900px;
+    animation: move_left 35000ms infinite linear;
+    z-index: -3;
+
+}
+
+.wind2 {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 230px;
+    left: 3150px;
+    animation: move_left 35000ms infinite linear;
+    z-index: -3;
+}
+
+.wind3 {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 375px;
+    left: 2250px;
+    animation: move_left 35000ms infinite linear;
+    z-index: -3;
+}
+
+
+.wave {
+    opacity: .5;
+    position: absolute;
+    background: #0af;
+    width: 5500px;
+    height: 5500px;
+    left: -2050px;
+    top: -4820px;
+    border-radius: 45%;
+    animation: rotate 18000ms infinite linear;
+    border: solid white 1.5px;
+    box-shadow: 10px 4px 30px greenyellow ;
+    z-index: -4;
+}
+
+.wave.-two {
+    animation: rotate 20000ms infinite linear;
+    opacity: .3;
+    background: lightblue;
+    z-index: -4;
+}
+
+.wave.-three {
+    animation: rotate 19000ms infinite linear;
+    opacity: .3;
+    background: white;
+    z-index: -4;
+}
+
+.hole {
+    position: absolute;
+    background: #7ae028;
+    width: 2100px;
+    height: 2100px;
+    margin: 0 auto;
+    top: 650px;
+    left: -335px;
+    border-radius: 38%;
+    border: solid white 1px;
+    z-index: -2;
+    box-shadow: 1px 1px 10px black;
+}
+
+.flag img {
+    width: 180px;
+    height: 300px;
+}
+.flag {
+    position: relative;
+    margin: 0 auto;
+    width: 250px;
+    height: 200px;
+    top: -150px;
+    z-index: -2;
+    overflow: hidden;
+
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move_left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-3150px);
+    }
+}

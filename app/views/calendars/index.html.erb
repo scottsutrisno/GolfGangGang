@@ -1,0 +1,42 @@
+    <header>
+      <nav class="nav">
+        <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Sign-Off", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign-In', new_user_session_path, class: "signin" %></li>
+      <% end %>
+        <li><%= link_to "Calendar", calendars_path, class: "current" %> </li>
+        <li><%= link_to "Home", root_path %></li>
+        </ul>
+      </nav>
+    </header>
+
+
+<% start_date = params.fetch(:start_date, Date.today).to_date %>
+<% date_range = (start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week).to_a %>
+
+<h1 class="center month"><%= start_date.strftime("%B") %></h1>
+
+
+
+<table class="calendar">
+<thead>
+<tr class="weekdays">
+<% date_range.slice(0,7).each do |date| %>
+<th><em><%= I18n.t("date.day_names")[date.wday] %></em></th>
+<% end %>
+
+</tr>
+</thead>
+
+<tbody>
+    <% date_range.each_slice(7) do |week| %>
+        <tr class="days">
+        <% week.each do |day|%>
+        <td> <%= day %></td>
+        <% end %>
+        </tr>
+    <% end %>
+</tbody>
+</table>
