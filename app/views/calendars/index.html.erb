@@ -18,7 +18,11 @@
 
 <h1 class="center month"><%= start_date.strftime("%B") %> <%= start_date.strftime("%Y") %></h1>
 
-<%= @response.body %>
+<% weather = JSON.parse(@response.body)["main"] %>
+<%= weather %>
+<%= weather["temp"] %>
+<%= @users.first.email %>
+
 
 
 <table class="calendar">

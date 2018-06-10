@@ -10,12 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_08_035524) do
+ActiveRecord::Schema.define(version: 2018_06_10_044319) do
 
   create_table "calendars", force: :cascade do |t|
     t.string "name"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "avatar"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_groups", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
