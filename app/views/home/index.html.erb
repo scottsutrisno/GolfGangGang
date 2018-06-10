@@ -7,12 +7,14 @@
         <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
       <% end %>
         <li><%= link_to "Calendar", calendars_path %></li>
-        <li><%= link_to "My Groups", root_path, class: "current" %></li>
+        <li><%= link_to "Root", root_path, class: "current" %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to "Users", users_path %></li>
         </ul>
       </nav>
     </header>
 
-<h1>GROUP PAGE</h1>
+<h1>Homie Page</h1>
 
 <% if @user && @user.role?(:god) %>
   <h3>Greetings, Your Majesty</h3>

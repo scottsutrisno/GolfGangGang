@@ -8,7 +8,7 @@ class UserPolicy
 
 
     def index?
-        @current_user.user?
+        @current_user.admin?
     end
 
     def show?

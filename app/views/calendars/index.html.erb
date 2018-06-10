@@ -2,12 +2,14 @@
       <nav class="nav">
         <ul>
       <% if user_signed_in? %>
-        <li><%= link_to "Sign-Off", destroy_user_session_path, :method => :delete %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
       <% else %>
-        <li><%= link_to 'Sign-In', new_user_session_path, class: "signin" %></li>
+        <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
       <% end %>
-        <li><%= link_to "Calendar", calendars_path, class: "current" %> </li>
-        <li><%= link_to "My Groups", root_path %></li>
+        <li><%= link_to "Calendar", calendars_path, class: "current" %></li>
+        <li><%= link_to "Root", root_path %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to "Users", users_path %></li>
         </ul>
       </nav>
     </header>
