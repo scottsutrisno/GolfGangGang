@@ -22,11 +22,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(private_params)
-      redirect_to users_path, :success => "User has been updated"
+      redirect_to users_path, :notice => "User has been updated"
     else
       redirect_to users_path, :alert => "Unable to update user"
   end
-
+end
 
 private
 

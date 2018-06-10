@@ -12,5 +12,7 @@
 </td>
 
 <td>
+<% if user != current_user %>
 <%= link_to "Delete User", user_path(user), method: :delete, class: 'button', data: { confirm: "Are you Sure?" } %>
+<% end %>
 </td>
