@@ -12,9 +12,26 @@
     <%= f.text_field :status, class: "form-control" %>
     </div>
 
-<%= f.submit "Create Group" %>
+<%= f.submit "Update Group" %>
 
 <% end %>
+
+
+<%=form_for @user_group do |f| %>
+  <div class="form-group">
+  <%= f.label :user_id %>
+  <%= f.collection_select(:user_id, User.all, :id, :user_full_name) %>
+  </div>
+  <div class="form-group">
+  <%= f.hidden_field(:group_id, value: "#{@group.id}") %>
+
+  </div>
+<%= f.submit "Add User" %>
+
+<% end %>
+
+
+
 
 
 

@@ -1,12 +1,12 @@
 class UserGroupsController < ApplicationController
   def edit
-    @user_groups = UserGroup.find(params[:id])
+    @user_group = UserGroup.find(params[:id])
   end
 
   def update
-    @user_groups = UserGroup.find(params[:id])
+    @user_group = UserGroup.find(params[:id])
 
-   if @user_groups.update_attributes(user_group_params)
+   if @user_group.update_attributes(user_group_params)
       redirect_to groups_url
    else
       render :action => 'edit'
@@ -14,9 +14,9 @@ class UserGroupsController < ApplicationController
   end
 
   def create
-    @user_groups = StudentCohort.new(user_group_params)
+    @user_group = UserGroup.new(user_group_params)
 
-    if @user_groups.save
+    if @user_group.save
       redirect_to groups_url
     else
       render :action => 'new'

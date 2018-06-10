@@ -13,3 +13,13 @@
     </header>
 
 <h1>GROUP PAGE</h1>
+
+<% if @user && @user.role?(:god) %>
+  <h3>Greetings, Your Majesty</h3>
+<% elsif @user && @user.role?(:king) %>
+  <h3>Welcome, Group Admin</h3>
+<% elsif @user && @user.role ==('man') %>
+  <h3>Welcome, noob</h3>
+<% end %>
+
+hi
