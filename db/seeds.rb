@@ -1,3 +1,12 @@
+User.create!(
+    email: "scottsutrisno@gmail.com",
+    username: "scottie",
+    password: "123123",
+    password_confirmation: "123123")
+
+
+
+
 20.times do |n|
     email =  "example-#{n+1}@example.com"
     username = "example-#{n+1}"
@@ -10,8 +19,3 @@
 
 end
 
-User.create!(
-    email: "scottsutrisno@gmail.com",
-    username: "scottie",
-    password: "123123",
-    password_confirmation: "123123")
