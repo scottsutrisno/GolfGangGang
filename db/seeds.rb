@@ -1,5 +1,5 @@
-18.times do |n|
-    email =  "example-#{n+1}@example.com"
+20.times do |n|
+    email =  "example#{n+1}@example.com"
     password = "password"
     User.create!(
         email: email,

@@ -23,7 +23,7 @@
 <% weather = JSON.parse(@response.body)["main"] %>
 <%= weather %>
 <%= weather["temp"] %>
-<%= @users.first.email %>
+<div class="hello"><% @users.first.email %></div>
 
 
 
