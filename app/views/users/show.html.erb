@@ -1,2 +1,8 @@
-<h1> Users: </h1>
-<p>Email: <%= @user.email if @user.email  %></p>
+<h1> User Info: </h1>
+<ul>
+<li>Email: <%= @user.email if @user.email  %></li>
+<li>Username: <%= @user.username if @user.username  %></li>
+<li>First Name: <%= @user.first_name if @user.first_name  %></li>
+<li>Last Name: <%= @user.last_name if @user.last_name  %></li>
+<li>Access Level: <%= @user.role if @user.role  %></li>
+</ul>
