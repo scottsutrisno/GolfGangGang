@@ -3,14 +3,14 @@ User.create!(
     username: "scottie",
     password: "123123",
     password_confirmation: "123123",
-    role: '2')
+    role: "2")
 
 User.create!(
     email: "group@leader.com",
     username: "GroupAdmin",
     password: "123123",
     password_confirmation: "123123",
-    role: '1')
+    role: "1")
 
 
 
