@@ -90,8 +90,9 @@ text-align: center;
 }
 
 .calendar td {
-    min-height: 125px;
+    min-height: 120px;
     border: solid black 1px;
+    overflow: scroll;
 }
 
 .calendar td:hover {
