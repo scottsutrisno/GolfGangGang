@@ -15,7 +15,7 @@ td img {
     margin-right: 50px;
     font-style: italic;
     width: 100vw;
-    border: solid white 1px;
+    border: solid black 1.5px;
 }
 .nav ul {
     list-style-type: none;
@@ -315,15 +315,17 @@ z-index: -3;
     list-style: none;
     border: solid black 2px;
     width: 600px;
-    height: 620px;
-    font-size: 40px;
+    height: 560px;
+    font-size: 36px;
     margin: 0 auto;
     box-shadow: -1px 1px 12px black;
+    text-align: center;
     background: #333;
     color: white;
+    padding-right: 50px;
 }
 
-.currentw li img {
+.currentw img {
     width: 100px;
 
 }
@@ -358,7 +360,7 @@ button {
         border-radius: 5px;
         width: 130px;
         height: 35px;
-        border: solid 2px #2a493a;
+        border: solid 2px black;
         margin-bottom: 2px;
         font-size: 13px;
 
@@ -383,6 +385,7 @@ button a {
 }
 
 .wbg {
+    height: 100vh;
     background-image: url("https://media.giphy.com/media/poBQ2Inwk8h8c/giphy.gif");
     background-size: 102%;
     background-repeat: no-repeat;
@@ -395,4 +398,12 @@ button a {
 background-image: url("https://media.giphy.com/media/5BeOhUJNgWExi/giphy.gif");
     background-size: 102%;
     background-repeat: no-repeat;
+}
+
+.wheader {
+    font-size: 50px;
+    font-family: 'Roboto',
+    sans-serif;
+    letter-spacing: 1.5px;
+    margin-bottom: 1px;
 }

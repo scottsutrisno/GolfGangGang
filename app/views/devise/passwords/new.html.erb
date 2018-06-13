@@ -1,4 +1,20 @@
-<h2>Forgot your password?</h2>
+    <header>
+      <nav class="nav">
+        <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "current" %></li>
+      <% else %>
+        <li><%= link_to 'Sign In!', new_user_session_path, class: "signin current" %></li>
+      <% end %>
+        <li><%= link_to "Calendar", calendars_path %></li>
+        <li><%= link_to "Weather", root_path %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>

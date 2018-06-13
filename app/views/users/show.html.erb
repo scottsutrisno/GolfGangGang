@@ -1,3 +1,20 @@
+    <header>
+      <nav class="nav">
+        <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
+      <% end %>
+        <li><%= link_to "Calendar", calendars_path %></li>
+        <li><%= link_to "Weather", root_path %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to "Users", users_path, class: "current" %></li>
+        </ul>
+      </nav>
+    </header>
+
+
 <h1> User Info: </h1>
 <ul>
 <li>Email: <%= @user.email if @user.email  %></li>

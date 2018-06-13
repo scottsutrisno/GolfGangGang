@@ -19,19 +19,7 @@
   <div class='hole'><div class="flag"><img src="https://kingkarnk288.files.wordpress.com/2014/06/in10.gif?w=240" alt=""></div></div>
 
 
-    <header>
-      <nav class="nav">
-        <ul>
-      <% if user_signed_in? %>
-        <li><%= link_to "Sign-Off", destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-        <li><%= link_to 'Sign-In', new_user_session_path, class: "current" %></li>
-      <% end %>
-        <li><%= link_to "Calendar", calendars_path %> </li>
-        <li><%= link_to "My Groups", root_path %></li>
-        </ul>
-      </nav>
-    </header>
+
 
 
 <div class= "devforms">
