@@ -1,3 +1,6 @@
+<div class="wbg">
+
+
     <header>
       <nav class="nav">
         <ul>
@@ -7,21 +10,40 @@
         <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
       <% end %>
         <li><%= link_to "Calendar", calendars_path %></li>
-        <li><%= link_to "Root", root_path, class: "current" %></li>
+        <li><%= link_to "Weather", root_path, class: "current" %></li>
         <li><%= link_to "My Groups", groups_path %></li>
         <li><%= link_to "Users", users_path %></li>
         </ul>
       </nav>
     </header>
 
-<h1>Homie Page</h1>
+<h1 class="wheader">Today's Forecast</h1>
+<button><a href="/home/show">5-Day Forecast</a></button>
+<% weather = JSON.parse(@response.body)["main"] %>
+<% weather2 = JSON.parse(@response.body)["weather"] %>
+<% name = JSON.parse(@response.body)["name"] %>
+<% wind = JSON.parse(@response.body)["wind"] %>
 
-<% if @user && @user.role?(:god) %>
-  <h3>Greetings, Your Majesty</h3>
-<% elsif @user && @user.role?(:king) %>
-  <h3>Welcome, Group Admin</h3>
-<% elsif @user && @user.role ==('man') %>
-  <h3>Welcome, noob</h3>
+
+
+
+
+<ul class="currentw">
+<h2 class= "center"><%= name %>, US</h2>
+<li>Current Temperature: <%= weather["temp"] %>°</li>
+<li>Humidity: <%= weather["humidity"] %>°</li>
+<li>High of: <%= weather["temp_min"] %>°</li>
+<li>Low of: <%= weather["temp_max"] %>°</li>
+<li>Wind Speed: <%= wind["speed"] %>MPH</li>
+<li>Wind Degrees: <%= wind["deg"] %>°</li>
+<% weather2.each do |w|%>
+<li><%= w["description"].titleize %></li>
+ <% icon = w["icon"] %>
+<li><img src="http://openweathermap.org/img/w/<%=icon%>.png"></li>
 <% end %>
+</ul>
 
-hi
+
+
+
+</div>

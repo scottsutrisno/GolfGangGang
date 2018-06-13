@@ -1,2 +1,123 @@
-<h1>Calendars#show</h1>
-<p>Find me in app/views/calendars/show.html.erb</p>
+<div class="wbg2">
+
+    <header>
+      <nav class="nav">
+        <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
+      <% end %>
+        <li><%= link_to "Calendar", calendars_path %></li>
+        <li><%= link_to "Weather", root_path, class: "current" %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        </ul>
+      </nav>
+    </header>
+
+<% list = JSON.parse(@response.body)["list"] %>
+<% city = JSON.parse(@response.body)["city"] %>
+
+<h1 class="wheader">5-Day Forecast</h1>
+<button><a href="/">Current Weather</a></button>
+
+
+
+<div class="transparent">
+<div class="fiveday">
+<h2 class= "center"><%= city["name"] %>, <%= city["country"] %></h2>
+<h3 class= "center">Day 1</h3>
+
+<% 1.upto(7) do |day| %>
+<ul>
+<li>Temperature: <%= list[day+1]["main"]["temp"] %>°</li>
+<% list[day+1]["weather"].each do |we| %>
+<li><%= we["description"].titleize%></li>
+ <% icon = we["icon"] %>
+<li><img src="http://openweathermap.org/img/w/<%=icon%>.png"></li>
+<% end %>
+<li>Time And Day: <%= list[day+1]["dt_txt"] %></li>
+</ul>
+<% end %>
+</div>
+
+
+
+<section class="fiveday">
+<h2 class= "center"><%= city["name"] %>, <%= city["country"] %></h2>
+<h3 class= "center">Day 2</h3>
+
+<% 8.upto(14) do |day| %>
+<ul>
+<li>Temperature: <%= list[day+1]["main"]["temp"] %>°</li>
+<% list[day+1]["weather"].each do |we| %>
+<li><%= we["description"].titleize%></li>
+ <% icon = we["icon"] %>
+<li><img src="http://openweathermap.org/img/w/<%=icon%>.png"></li>
+<% end %>
+<li>Time And Day: <%= list[day+1]["dt_txt"] %></li>
+</ul>
+<% end %>
+</section>
+
+
+
+<div class="fiveday">
+<h2 class= "center"><%= city["name"] %>, <%= city["country"] %></h2>
+<h3 class= "center">Day 3</h3>
+
+<% 15.upto(21) do |day| %>
+<ul>
+<li>Temperature: <%= list[day+1]["main"]["temp"] %>°</li>
+<% list[day+1]["weather"].each do |we| %>
+<li><%= we["description"].titleize%></li>
+ <% icon = we["icon"] %>
+<li><img src="http://openweathermap.org/img/w/<%=icon%>.png"></li>
+<% end %>
+<li>Time And Day: <%= list[day+1]["dt_txt"] %></li>
+</ul>
+<% end %>
+</div>
+
+
+
+<div class="fiveday">
+<h2 class= "center"><%= city["name"] %>, <%= city["country"] %></h2>
+<h3 class= "center">Day 4</h3>
+
+<% 22.upto(28) do |day| %>
+<ul>
+<li>Temperature: <%= list[day+1]["main"]["temp"] %>°</li>
+<% list[day+1]["weather"].each do |we| %>
+<li><%= we["description"].titleize%></li>
+ <% icon = we["icon"] %>
+<li><img src="http://openweathermap.org/img/w/<%=icon%>.png"></li>
+<% end %>
+<li>Time And Day: <%= list[day+1]["dt_txt"] %></li>
+</ul>
+<% end %>
+</div>
+
+
+
+<div class="fiveday">
+<h2 class= "center"><%= city["name"] %>, <%= city["country"] %></h2>
+<h3 class= "center">Day 5</h3>
+
+<%29.upto(35) do |day| %>
+<ul>
+<li>Temperature: <%= list[day+1]["main"]["temp"] %>°</li>
+<% list[day+1]["weather"].each do |we| %>
+<li><%= we["description"].titleize%></li>
+ <% icon = we["icon"] %>
+<li><img src="http://openweathermap.org/img/w/<%=icon%>.png"></li>
+<% end %>
+<li>Time And Day: <%= list[day+1]["dt_txt"] %></li>
+</ul>
+<% end %>
+</div>
+
+
+    </div>
+</div>

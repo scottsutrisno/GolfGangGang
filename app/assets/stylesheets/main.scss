@@ -5,6 +5,7 @@ body {
     margin: 0;
 }
 
+
 td img {
     width: 60px;
     height: 60px;
@@ -303,4 +304,95 @@ z-index: -3;
     100% {
         transform: translateX(-3150px);
     }
+}
+
+.n {
+    float: right;
+}
+
+
+.currentw {
+    list-style: none;
+    border: solid black 2px;
+    width: 600px;
+    height: 620px;
+    font-size: 40px;
+    margin: 0 auto;
+    box-shadow: -1px 1px 12px black;
+    background: #333;
+    color: white;
+}
+
+.currentw li img {
+    width: 100px;
+
+}
+
+
+.fiveday {
+    border: solid black 2.5px;
+    border-bottom: solid black 5px;
+    border-top: solid black 5px;
+    width: 19%;
+    height: 453px;
+    font-size: 12px;
+    padding-top: 2px;
+    text-align: center;
+    overflow: scroll;
+    display:inline-block;
+    margin: 35px 2.5px;
+    box-shadow: -1px 1px 12px black;
+    background: #333;
+    color: white;
+}
+
+.fiveday ul {
+padding: 10px 0px;
+list-style: none;
+border-bottom: solid black 1px;
+}
+
+button {
+        background: #333;
+        color: white;
+        border-radius: 5px;
+        width: 130px;
+        height: 35px;
+        border: solid 2px #2a493a;
+        margin-bottom: 2px;
+        font-size: 13px;
+
+}
+
+button a:link {
+    color: white;
+}
+button a:visited {
+    color: white;
+}
+
+button input {
+    background: transparent;
+    border: none;
+    color: white;
+            font-size: 13px;
+}
+
+button a {
+    text-decoration: none;
+}
+
+.wbg {
+    background-image: url("https://media.giphy.com/media/poBQ2Inwk8h8c/giphy.gif");
+    background-size: 102%;
+    background-repeat: no-repeat;
+}
+
+
+
+.wbg2 {
+    height: 100vh;
+background-image: url("https://media.giphy.com/media/5BeOhUJNgWExi/giphy.gif");
+    background-size: 102%;
+    background-repeat: no-repeat;
 }

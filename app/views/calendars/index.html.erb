@@ -7,7 +7,7 @@
         <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
       <% end %>
         <li><%= link_to "Calendar", calendars_path, class: "current" %></li>
-        <li><%= link_to "Root", root_path %></li>
+        <li><%= link_to "Weather", root_path %></li>
         <li><%= link_to "My Groups", groups_path %></li>
         <li><%= link_to "Users", users_path %></li>
         </ul>
@@ -20,11 +20,10 @@
 
 <h1 class="center month"><%= start_date.strftime("%B") %> <%= start_date.strftime("%Y") %></h1>
 
-<% weather = JSON.parse(@response.body)["main"] %>
-<%= weather %>
-<%= weather["temp"] %>
-<div class="hello"><% @users.first.email %></div>
 
+
+<button class="p"><%= link_to "Previous Month", start_date: date_range.first - 1.day %></button>
+<button class="n"><%= link_to "Next Month", start_date: date_range.last + 1.day %></button>
 
 
 <table class="calendar">

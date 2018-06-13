@@ -1,8 +1,8 @@
 class CalendarsController < ApplicationController
   # before_action :authenticate_user!
   def index
-    @response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?zip=91007,us&units=imperial&appid=#{ENV['WEATHER']}")
-    @calendars = Calendar.where(:group_id => current_user.id)
+    @calendars = Calendar.where(:group_id => current_user.groups.ids)
+
     @users = User.all
     @groups = Group.all
   end

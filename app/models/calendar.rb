@@ -1,3 +1,4 @@
 class Calendar < ApplicationRecord
-    belongs_to :group
+    has_one :group, through: :user
+    belongs_to :users, required: false
 end

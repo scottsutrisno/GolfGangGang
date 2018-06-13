@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
     has_many :user_groups
     has_many :users, :through => :user_groups
-    has_one :calendar
+    has_many :calendars
+    has_many :calendars, :through => :users
 end
