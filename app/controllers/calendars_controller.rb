@@ -2,18 +2,20 @@ class CalendarsController < ApplicationController
   # before_action :authenticate_user!
   def index
     @response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?zip=91007,us&units=imperial&appid=#{ENV['WEATHER']}")
-    @calendars = Calendar.all
+    @calendars = Calendar.where(:group_id => current_user.id)
     @users = User.all
+    @groups = Group.all
   end
 
   def new
     @calendar = Calendar.new
     @users = User.all
+    @groups = Group.all
   end
 
 def show
-      @calendar = Calendar.find(params[:id])
-    @users = User.all
+    @calendar = Calendar.find(params[:id])
+    @groups = Group.all
   end
 
   def create
@@ -28,7 +30,6 @@ def show
 
   def edit
     @calendar = Group.find(params[:id])
-    # @user_group = UserGroup.new
   end
 
 
@@ -51,7 +52,7 @@ def show
   private
 
   def calendar_params
-    params.require(:calendar).permit(:name, :start_time, :end_time)
+    params.require(:calendar).permit(:name, :start_time, :end_time, :comment, :group_id)
   end
 
 end

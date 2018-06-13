@@ -22,23 +22,9 @@
   </table>
 
 
-<table class="table">
-      <tbody>
-        <tr>
 
-          <th scope="row">Members:</th>
+<h2>Members:</h2>
 
-          </tr>
-          <tr>
-
-
-            <% @group.users.each do |user|%>
-            <td><%= user.first_name %> <%= user.last_name %> </td>
-            <% end %>
-
-
-
-
-      </tr>
-      </tbody>
-      </table>
+    <% @group.users.each do |user|%>
+        <p>Username: <%= user.username %> - <%= user.first_name %><%= user.last_name %></p>
+    <% end %>
