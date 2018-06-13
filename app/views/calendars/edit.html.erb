@@ -1,0 +1,54 @@
+    <header>
+      <nav class="nav">
+        <ul>
+      <% if user_signed_in? %>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+        <li><%= link_to 'Sign In!', new_user_session_path, class: "signin" %></li>
+      <% end %>
+        <li><%= link_to "Calendar", calendars_path, class: "current" %></li>
+        <li><%= link_to "Weather", root_path %></li>
+        <li><%= link_to "My Groups", groups_path %></li>
+        <li><%= link_to "Users", users_path %></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="devforms">
+    <%=form_for @calendar do |f| %>
+    <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :start_time, :ampm => true, :minute_step => 15 %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :end_time %>
+    <%= f.datetime_select :end_time, :ampm => true, :minute_step => 15 %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :comment %>
+    <%= f.text_field :comment, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.collection_select(:user_id, User.all, :id, :username) %>
+    </div>
+
+<%= f.submit "Update Event!" %>
+
+<% end %>
+
+</div>
+
+
+
+
+
+

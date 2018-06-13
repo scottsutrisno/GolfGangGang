@@ -2,7 +2,6 @@ class CalendarsController < ApplicationController
   # before_action :authenticate_user!
   def index
     @calendars = Calendar.where(:group_id => current_user.groups.ids)
-
     @users = User.all
     @groups = Group.all
   end
@@ -11,11 +10,13 @@ class CalendarsController < ApplicationController
     @calendar = Calendar.new
     @users = User.all
     @groups = Group.all
+
   end
 
 def show
     @calendar = Calendar.find(params[:id])
     @groups = Group.all
+    @users = Group.find(@calendar.group_id).users
   end
 
   def create
@@ -29,7 +30,10 @@ def show
 
 
   def edit
-    @calendar = Group.find(params[:id])
+    @calendar = Calendar.find(params[:id])
+    @calendars = Calendar.all
+    @users = User.all
+
   end
 
 
@@ -52,7 +56,7 @@ def show
   private
 
   def calendar_params
-    params.require(:calendar).permit(:name, :start_time, :end_time, :comment, :group_id)
+    params.require(:calendar).permit(:name, :start_time, :end_time, :comment, :group_id, :user_id)
   end
 
 end
